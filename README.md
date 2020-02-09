@@ -1,15 +1,15 @@
 # Photo-Album-Console-App
 LT technical showcase 
-Photo Album console app created on Feburary 9th, 2020 
+created on Feburary 9th, 2020 
 
-#AUTHOR
+# AUTHOR
 created by Tessa Newman-Heggie
 
-#LAUNCH INSTRUCTIONS
+# LAUNCH INSTRUCTIONS
 $make
 $./app 
 
-#LIST OF FUNCTIONS
+# LIST OF FUNCTIONS
 
 int main();
 void menu_select(char *selection);
