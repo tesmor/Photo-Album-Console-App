@@ -41,31 +41,27 @@ int formatAlbum(){
 			const char *from = str;
   			char id_name[10]; 
   			strncpy(id_name, from+10, 10);
+			
 			//removes comma from id
 			char *comma_pointer = strchr(id_name, ',') ;
 			
 			if (comma_pointer != NULL){
 				*comma_pointer = '\0';
 			}
-			
-			
-			//works:
-			//id_name[strlen(id_name)-1]= '\0';
-			//id_name[strlen(id_name)-1]= '\0';
-	
-			
-			
-			//printf("\nstrlen(id_name_long): %lu\n",strlen(id_name_long));
-			printf("\nid: %s\n",id_name);
+			printf("\n%s: ",id_name);
 			
 		//if "title" is in the line, prints the title
 		} else if(is_substring(str, title)){
 			const char *from = str;
   			char title_name[100]; 
   			strncpy(title_name, from+13, 100);
+			
 			//removes comma from title
-			*strchr(title_name, ',') = '\0';
-			printf("title: %s\n",title_name);
+			char *comma_pointer_title = strchr(title_name, ',');
+			if (comma_pointer_title != NULL){
+				*comma_pointer_title = '\0';
+			}
+			printf("%s\n",title_name);
 		}
 	}
  

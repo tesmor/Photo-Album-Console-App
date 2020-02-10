@@ -83,7 +83,6 @@ void view_album(int album_number){
 }
 
 void view_all_albums(){
-	//char url_query[] = malloc(sizeof(char)*100);
     char url_query[] = "https://jsonplaceholder.typicode.com/photos";
 	printf("All albums:\n");
 	display(url_query);
