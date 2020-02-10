@@ -27,6 +27,7 @@ int formatAlbum(){
 	char line[1000];
 	char id[]= "id";
 	char title[]= "title";
+	char album_id[] = "albumId";
     album = fopen(file_name, "r");
 	
     if (album == NULL){
@@ -35,11 +36,27 @@ int formatAlbum(){
     } 
 	//while there's a line in the text file
     while (fgets(str, maxchar, album) != NULL){
-		
-		//if "id" is in the line, prints the id number
-	    if(is_substring(str, id)){
+	char title_name[120];
+	char id_name[10]; 
+	bool print_id= false;
+
+		//if "title" is in the line, prints the title 
+	    if (is_substring(str, title)){
 			const char *from = str;
-  			char id_name[10]; 
+  			 
+  			strncpy(title_name, from+13, 120);
+			
+			//removes comma from title
+			char *comma_pointer_title = strchr(title_name, ',');
+			if (comma_pointer_title != NULL){
+				*comma_pointer_title = '\0';
+			}
+			
+		}
+		//if "id" is in the line, prints the id
+		else if(is_substring(str, id)){
+			
+			const char *from = str;
   			strncpy(id_name, from+10, 10);
 			
 			//removes comma from id
@@ -48,21 +65,15 @@ int formatAlbum(){
 			if (comma_pointer != NULL){
 				*comma_pointer = '\0';
 			}
+		} else if(is_substring(str, album_id)){
+			print_id = true;
+		} 
+		if (print_id){
 			printf("\n%s: ",id_name);
-			
-		//if "title" is in the line, prints the title
-		} else if(is_substring(str, title)){
-			const char *from = str;
-  			char title_name[100]; 
-  			strncpy(title_name, from+13, 100);
-			
-			//removes comma from title
-			char *comma_pointer_title = strchr(title_name, ',');
-			if (comma_pointer_title != NULL){
-				*comma_pointer_title = '\0';
-			}
 			printf("%s\n",title_name);
+			print_id = false;
 		}
+	
 	}
  
     fclose(album);
