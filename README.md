@@ -9,15 +9,9 @@ created by Tessa Newman-Heggie
 $make
 $./app 
 
-## FUNCTIONS
-
-int main();
-void menu_select(char *selection);
-void view_album(int album_number);
-void view_all_albums();
-void view_random_album();
-
-void display(char url_query[]);
-int formatAlbum();
-int is_substring(char line[], char target[]);
+## KNOWN BUGS/THINGS TO IMPROVE
+currently, there is a bug where some album titles are interpreted as ids, 
+and displayed incorrectly because of that and the ways ids are formatted. 
+This can be fixed by using a C library for processing json, instead of manually processing the strings, 
+which I'm doing now. Using a json string library would also make this program more generalizable. 
 
