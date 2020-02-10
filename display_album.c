@@ -40,17 +40,32 @@ int formatAlbum(){
 		//if "id" is in the line, prints the id number
 	    if(is_substring(str, id)){
 			const char *from = str;
-  			char id_name[10]; 
-  			strncpy(id_name, from+10, 10);
+  			char id_name_long[10]; 
+  			strncpy(id_name_long, from+10, 10);
 			
 			//removes comma from id
-			for(int i; i<10; i++){
+			int i = 0;
+			while( (i<10) && (id_name_long[i] != ',') ){
+				i+=1;
+			}
+			char id_name[i];
+			
+			strncpy(id_name, id_name_long, i);
+			
+			//tried to find comma and replace w null- doesn't work
+			/*for(int i; i<10; i++){
 				char current_char = id_name[i];
 				if (current_char == ','){
 					id_name[i] = '\0';
 				}
 				printf("i: %c\n", id_name[i]);
-			}
+			} */
+			
+			//tried to print each character individually- doesn't work
+			//printf("\nid: %c",id_name[0]);
+			//printf("%c",id_name[1]);
+			//printf("%c\n",id_name[2]);
+			
 			printf("\nid: %s\n",id_name);
 			
 		//if "title" is in the line, prints the title
