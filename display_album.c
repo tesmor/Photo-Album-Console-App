@@ -42,7 +42,12 @@ int formatAlbum(){
   			char id_name[10]; 
   			strncpy(id_name, from+10, 10);
 			//removes comma from id
-			*strchr(id_name, ',') = '\0';
+			char *comma_pointer = strchr(id_name, ',') ;
+			
+			if (comma_pointer != NULL){
+				*comma_pointer = '\0';
+			}
+			
 			
 			//works:
 			//id_name[strlen(id_name)-1]= '\0';
