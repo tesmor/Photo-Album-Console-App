@@ -63,7 +63,7 @@ void menu_select(char *selection){
         printf("\nError: menu selection '%s' is not an option. \nPlease select another option or input the number of a specific album.\n\n", selection);
 		free(selection);
     	}	    
-    }
+    }  
 
 void view_album(int album_number){
 	if((album_number > 100 )|(album_number < 1  ) ){

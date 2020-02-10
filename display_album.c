@@ -32,7 +32,7 @@ int formatAlbum(){
     if (album == NULL){
         printf("Could not open file %s\n",file_name);
         return 1;
-    }
+    } 
 	//while there's a line in the text file
     while (fgets(str, maxchar, album) != NULL){
 		
