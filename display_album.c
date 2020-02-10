@@ -44,13 +44,10 @@ int formatAlbum(){
 			//removes comma from id
 			*strchr(id_name, ',') = '\0';
 			
-			
-			
-			
 			//works:
-			//id_name_long[strlen(id_name_long)-1]= '\0';
-			//id_name_long[strlen(id_name_long)-1]= '\0';
-			
+			//id_name[strlen(id_name)-1]= '\0';
+			//id_name[strlen(id_name)-1]= '\0';
+	
 			
 			
 			//printf("\nstrlen(id_name_long): %lu\n",strlen(id_name_long));
