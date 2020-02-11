@@ -87,6 +87,7 @@ int formatAlbum(){
 		} 
 	}
  
+	//prints the last id and title in the album
 	printf("\n%s ",id_name);
 	printf("%s\n",title_name);
     fclose(album);

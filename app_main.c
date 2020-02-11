@@ -89,6 +89,7 @@ void view_all_albums(){
 }
 
 void view_random_album(){
+	srand(time(0)); 
 	int random_number = rand() % 100 + 1;
 	view_album(random_number);
 }
