@@ -16,8 +16,8 @@ This can be fixed by using a json parser for C, instead of manually processing t
 which I'm doing now. Using a json library would also make this program more generalizable to other formatting styles. 
 
 
-### bug: random id and title of a photo not in the album appear before the other ids/titles
-this is happening because of the way id and name checks are happening in format_album()
+### bug: sometimes, random characters appear before the other ids/titles
+not consistent for specific albums/queries
 
 
 
