@@ -29,6 +29,9 @@ int formatAlbum(){
 	char title[]= "title";
 	char album_id[] = "albumId";
     album = fopen(file_name, "r");
+	bool first_id = true; //for making formatting look better at beginning
+	char title_name[120]= " ";
+	char id_name[10]= " ";
 	
     if (album == NULL){
         printf("Could not open file %s\n",file_name);
@@ -36,12 +39,15 @@ int formatAlbum(){
     } 
 	//while there's a line in the text file
     while (fgets(str, maxchar, album) != NULL){
-	char title_name[120];
-	char id_name[10]; 
+	 
 	bool print_id= false;
 
+		//to make sure id and title only printed once per photo
+	    if(is_substring(str, album_id)){
+			print_id = true;
+			
 		//if "title" is in the line, prints the title 
-	    if (is_substring(str, title)){
+		} else if (is_substring(str, title)){
 			const char *from = str;
   			 
   			strncpy(title_name, from+13, 120);
@@ -65,17 +71,24 @@ int formatAlbum(){
 			if (comma_pointer != NULL){
 				*comma_pointer = '\0';
 			}
-		} else if(is_substring(str, album_id)){
-			print_id = true;
-		} 
-		if (print_id){
-			printf("\n%s: ",id_name);
+		} //else if(is_substring(str, album_id)){
+			//print_id = true;
+		//} 
+		//check to make sure id and title only printed once per photo
+		if ((print_id) && (!first_id)){
+			printf("\n%s ",id_name);
 			printf("%s\n",title_name);
 			print_id = false;
-		}
-	
+		} else if ((print_id) && (first_id)){
+			printf("%s ",id_name);
+			printf("%s\n",title_name);
+			print_id = false;
+			first_id = false;
+		} 
 	}
  
+	printf("\n%s ",id_name);
+	printf("%s\n",title_name);
     fclose(album);
 	return 0;
 }

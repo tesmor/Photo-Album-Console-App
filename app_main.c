@@ -70,7 +70,7 @@ void view_album(int album_number){
 		printf("Album selection %i is not in range 1-100. Please make another selection.\n", album_number );
 	} 
 	else{
-		printf("Album %i: \n", album_number);
+		printf("Album %i:\n", album_number);
 		char album_str[4];
 		
 		//convert album number into string for concatenation
