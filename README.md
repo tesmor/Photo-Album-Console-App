@@ -1,6 +1,5 @@
 # Photo-Album-Console-App
 LT technical showcase 
-created on Feburary 9th, 2020 
 
 ## AUTHOR
 created by Tessa Newman-Heggie
