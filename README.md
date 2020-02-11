@@ -17,6 +17,7 @@ which I'm doing now. Using a json library would also make this program more gene
 
 
 ### bug: random id and title of a photo not in the album appear before the other ids/titles
+this is happening because of the way id and name checks are happening in format_album()
 
 
 
