@@ -25,9 +25,12 @@ int formatAlbum(){
     char file_name[] = "album.txt";
 	int maxchar = 10000;
 	char line[1000];
+	
+	//to identify lines to print
 	char id[]= "id";
 	char title[]= "title";
 	char album_id[] = "albumId";
+	
     album = fopen(file_name, "r");
 	bool first_id = true; //for making formatting look better at beginning
 	char title_name[120]= " ";
@@ -71,9 +74,9 @@ int formatAlbum(){
 			if (comma_pointer != NULL){
 				*comma_pointer = '\0';
 			}
-		} //else if(is_substring(str, album_id)){
-			//print_id = true;
-		//} 
+		} else if(is_substring(str, album_id)){
+			print_id = true;
+		} 
 		//check to make sure id and title only printed once per photo
 		if ((print_id) && (!first_id)){
 			printf("\n%s ",id_name);
