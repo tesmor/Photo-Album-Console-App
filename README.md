@@ -17,7 +17,8 @@ which I'm doing now. Using a json library would also make this program more gene
 
 
 ### bug: sometimes, random characters appear before the other ids/titles
-not consistent for specific albums/queries
+not consistent for specific albums/queries. characters that appear are part of other titles in albums. 
+The title that appears is usually(?) the id and title of the photo after the last query sent. For example, if 
 
 
 
