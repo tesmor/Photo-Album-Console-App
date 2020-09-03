@@ -1,5 +1,5 @@
 # Photo-Album-Console-App
-LT technical showcase 
+originally created as a technical showcase 
 
 ## AUTHOR
 created by Tessa Newman-Heggie
